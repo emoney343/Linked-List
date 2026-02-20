@@ -7,11 +7,12 @@ public class Test {
 
         int option = 0;
 
-        while (option != 3) {
+        while (option != 4) {
         System.out.println("Select an Option");
         System.out.println("1: Add Contact");
         System.out.println("2: Print Contacts");
-        System.out.println("3: Quit");
+        System.out.println("3: Remove Contact");
+        System.out.println("4: Quit");
         System.out.print("Choice: ");
         
         option = scanner.nextInt();
@@ -32,6 +33,17 @@ public class Test {
                 System.out.println("Contacts:");
                 manager.printAll();
                 break;
+            
+            case 3:
+                System.out.println("Enter First Name of Contact: ");
+                String nameToRemove = scanner.nextLine();
+                if (manager.removeEntry(nameToRemove)) {
+                    System.out.println("Removed");
+                } else {
+                    System.out.println("Not found.");
+                }
+                break;
+
 
         }
     }

@@ -12,6 +12,23 @@ public class Manager {
         for (Obj o: person){
             System.out.println(o);
         }
+            
+
+        }
+
+          public boolean removeEntry(String nameToRemove) {
+            for (int i = 0; i < person.size(); i++) {
+                if (person.get(i).getName().equalsIgnoreCase(nameToRemove)) {
+                    person.remove(i);
+                    return true;
+                }
+            }
+            return false;
+            
+
     }
 
-}
+    
+    }
+
+
