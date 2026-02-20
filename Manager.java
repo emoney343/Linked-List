@@ -28,6 +28,31 @@ public class Manager {
 
     }
 
+      public boolean modifyEntry(String nameToModify, String newName, String newPhone) {
+            for (int i = 0; i < person.size(); i++) {
+                Obj o = person.get(i);
+
+                if (o.getName().equalsIgnoreCase(nameToModify)) {
+
+                    if (newName != null && !newName.isBlank()) {
+                        o.setName(newName);
+
+                    }
+                    
+                    if (newPhone != null && !newPhone.isBlank()) {
+                        o.setPhone(newPhone);
+
+                    }
+
+                    return true;
+
+                }
+            }
+            return false;
+        
+        }
+            
+
     
     }
 
