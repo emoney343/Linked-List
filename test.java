@@ -7,12 +7,13 @@ public class Test {
 
         int option = 0;
 
-        while (option != 4) {
+        while (option != 5) {
         System.out.println("Select an Option");
         System.out.println("1: Add Contact");
         System.out.println("2: Print Contacts");
         System.out.println("3: Remove Contact");
-        System.out.println("4: Quit");
+        System.out.println("4: Modify Contact");
+        System.out.println("5: Quit");
         System.out.print("Choice: ");
         
         option = scanner.nextInt();
@@ -43,7 +44,23 @@ public class Test {
                     System.out.println("Not found.");
                 }
                 break;
+            
+            case 4:
+                System.out.println("Enter Contact to Change");
+                String nameToModify = scanner.nextLine();
 
+                System.out.print("Enter New Name: ");
+                String newName = scanner.nextLine();
+
+                System.out.print("Enter New Phone: ");
+                String newPhone = scanner.nextLine();
+
+                if (manager.modifyEntry(nameToModify, newName, newPhone)) {
+                    System.out.println("Updated");
+                } else {
+                    System.out.println("Contact not found");
+                }
+                break;
 
         }
     }
