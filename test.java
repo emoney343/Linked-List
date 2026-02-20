@@ -5,13 +5,36 @@ public class Test {
         Scanner scanner = new Scanner(System.in);
         Manager manager = new Manager();
 
-        System.out.println("Enter name: ");
-        String name = scanner.nextLine();
+        int option = 0;
 
-        System.out.println("Enter Phone Number: ");
-        String phone = scanner.nextLine();
+        while (option != 3) {
+        System.out.println("Select an Option");
+        System.out.println("1: Add Contact");
+        System.out.println("2: Print Contacts");
+        System.out.println("3: Quit");
+        System.out.print("Choice: ");
+        
+        option = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.println(manager.addEntry(name, phone));
+        switch (option) {
+           case 1:
+              System.out.print("Enter name: ");
+              String name = scanner.nextLine();
+
+            System.out.print("Enter Phone Number: ");
+            String phone = scanner.nextLine();
+
+            manager.addEntry(name, phone);
+            break;
+
+            case 2:
+                System.out.println("Contacts:");
+                manager.printAll();
+                break;
+
+        }
     }
 
+    }
 }
