@@ -10,11 +10,6 @@ public class Obj {
         this.name = name;
         this.phone = phone;
 
-        name.toString();
-        phone.toString();
-
-
-
 
 
     }

@@ -8,6 +8,10 @@ public class Manager {
 
     }
 
+    public void addFirst(String name1, String phone1) {
+        person.addFirst(new Obj(name1, phone1));
+    }
+
     public void printAll() {
         for (Obj o: person){
             System.out.println(o);
