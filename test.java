@@ -8,14 +8,16 @@ public class Test {
         int option = 0;
 
         // Menu
-        while (option != 6) {
+        while (option != 8) {
         System.out.println("Select an Option");
         System.out.println("1: Add Add Contact to End of List");
         System.out.println("2: Add Contact to Beginning of List");
-        System.out.println("3: Print Contacts");
-        System.out.println("4: Remove Contact");
-        System.out.println("5: Modify Contact");
-        System.out.println("6: Quit");
+        System.out.println("3: Get contact");
+        System.out.println("4: Print Contacts");
+        System.out.println("5: Print contact at Index");
+        System.out.println("6: Remove Contact");
+        System.out.println("7: Modify Contact");
+        System.out.println("8: Quit");
         System.out.print("Choice: ");
         
         // Stores choice
@@ -46,15 +48,32 @@ public class Test {
               
               manager.addFirst(name1, phone1);
               break;
+
+            case 3:
+                System.out.print("Enter Name of Contact to Get: ");
+                String nameToGet = scanner.nextLine();
+
+                manager.getContact(nameToGet);
+                break;
                 
             // Print all contacts
-            case 3:
+            case 4:
                 System.out.println("Contacts:");
                 manager.printAll();
                 break;
             
+            case 5:
+                manager.printIndexMenu();
+
+                System.out.print("Enter Index of Contact: ");
+                int index = scanner.nextInt();
+                manager.printContactByIndex(index);
+                break;
+
+
+            
             // Remove a contact
-            case 4:
+            case 6:
                 System.out.println("Enter First Name of Contact: ");
                 String nameToRemove = scanner.nextLine();
                 if (manager.removeEntry(nameToRemove)) {
@@ -65,7 +84,7 @@ public class Test {
                 break;
             
             // Modify a contact
-            case 5:
+            case 7:
                 System.out.println("Enter Contact to Change");
                 String nameToModify = scanner.nextLine();
 
@@ -82,8 +101,15 @@ public class Test {
                 }
                 break;
 
+                case 8:
+                    System.out.println("Goodbye!");
+                    break;
+            
+            
+
                 default:
-                    System.out.println("Invalid option. Please choose 1-6");
+                    System.out.println("Invalid option. Please choose 1-8");
+                
             
 
         }
@@ -91,10 +117,9 @@ public class Test {
     } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
         System.out.println("Error: " + e.getMessage());
     }
-    
-    scanner.close();
 
     }
+    scanner.close();
 }
 
 }
