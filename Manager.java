@@ -103,6 +103,22 @@ public class Manager {
 
     }
 
+        public void addAtIndex (int index, String name, String phone) {
+            if (name == null || name.isBlank()) {
+                throw new IllegalArgumentException("Name cannot be empty");
+
+            }
+            if (phone == null || phone.isBlank()) {
+                throw new IllegalArgumentException("Phone cannot be empty");
+            }
+
+            if (index < 0 || index > person.size()) {
+                throw new IndexOutOfBoundsException("Index must be between 0 and " + person.size());
+            }
+
+            person.add(index, new Obj(name, phone));
+        }
+
             
 
     
