@@ -4,11 +4,25 @@ public class Manager {
     private LinkedList<Obj> person = new LinkedList<>();
 
     public void addEntry(String name, String phone) {
+
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+
+        }  if (phone == null || phone.isBlank()) {
+            throw new IllegalArgumentException("Phone cannot be empty");
+        } 
         person.add(new Obj(name, phone));
 
     }
 
     public void addFirst(String name1, String phone1) {
+
+        if (name1 == null || name1.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+
+        }  if (phone1 == null || phone1.isBlank()) {
+            throw new IllegalArgumentException("Phone cannot be empty");
+        } 
         person.addFirst(new Obj(name1, phone1));
     }
 
@@ -55,9 +69,18 @@ public class Manager {
             return false;
         
         }
+
+        public void getContact (String nameToGet) {
+            for (int i = 0; i < person.size(); i++) {
+                Obj o = person.get(i);
+                if (o.getName().equalsIgnoreCase(nameToGet)) {
+                System.out.println(o);
+        }
+    }
             
 
     
     }
+}
 
 
