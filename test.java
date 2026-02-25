@@ -50,6 +50,7 @@ public class Test {
               manager.addFirst(name1, phone1);
               break;
 
+            // Add at index
             case 3: 
                 manager.printIndexMenu();
 
