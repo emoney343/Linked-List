@@ -2,6 +2,7 @@ import java.util.LinkedList;
 
 public class Manager {
     private LinkedList<Obj> person = new LinkedList<>();
+    public Object printIndexMenu;
 
     public void addEntry(String name, String phone) {
 
@@ -76,11 +77,37 @@ public class Manager {
                 if (o.getName().equalsIgnoreCase(nameToGet)) {
                 System.out.println(o);
         }
+            }
+        }
+        
+
+        public void printIndexMenu() {
+            if (person.isEmpty()) {
+                System.out.println("No Contacts");
+                return;
+              }
+           
+              for (int i = 0; i < person.size(); i++) {
+                System.out.println(i + ": " + person.get(i).getName());
+
+        }
     }
+
+        public void printContactByIndex(int index) {
+            if (index < 0 || index >= person.size()) {
+                System.out.println("Invalid index. Choose 0 to" + (person.size() - 1));
+                return;
+            }
+            System.out.println(person.get(index));
+        
+
+    }
+
             
 
     
     }
-}
+
+
 
 
