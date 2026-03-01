@@ -33,41 +33,67 @@ public class Test {
               System.out.print("Enter name: ");
               String name = scanner.nextLine();
 
-            System.out.print("Enter Phone Number: ");
-            String phone = scanner.nextLine();
+              System.out.print("Enter phone: ");
+              String phone = scanner.nextLine();
 
-            manager.addEntry(name, phone);
-            break;
+              System.out.print("Enter street: ");
+              String street = scanner.nextLine();
+
+              System.out.print("Enter city: ");
+              String city = scanner.nextLine();
+
+              System.out.print("Enter zip: ");
+              String zip = scanner.nextLine();
+
+              manager.addEntry(name, phone, street, city, zip);
+              break;
 
             // Add name to beginnng of list
             case 2:
               System.out.print("Enter name: ");
               String name1 = scanner.nextLine();
 
-              System.out.print("Enter Phone Number: ");
+              System.out.print("Enter phone: ");
               String phone1 = scanner.nextLine();
-              
-              manager.addFirst(name1, phone1);
+
+              System.out.print("Enter street: ");
+              String street1 = scanner.nextLine();
+
+              System.out.print("Enter city: ");
+              String city1 = scanner.nextLine();
+
+              System.out.print("Enter zip: ");
+              String zip1 = scanner.nextLine();
+
+              manager.addFirst(name1, phone1, street1, city1, zip1);
               break;
 
             // Add at index
             case 3: 
-                manager.printIndexMenu();
+              manager.printIndexMenu();
 
-                System.out.print("Enter index to insert at: ");
-                int idx = scanner.nextInt();
-                scanner.nextLine();
+              System.out.print("Enter index to insert at: ");
+              int idx = scanner.nextInt();
+              scanner.nextLine();
 
-                System.out.print("Enter name: ");
-                String nameAt = scanner.nextLine();
+              System.out.print("Enter name: ");
+              String nameAt = scanner.nextLine();
 
-                System.out.print("Enter phone: ");
-                String phoneAt = scanner.nextLine();
+              System.out.print("Enter phone: ");
+              String phoneAt = scanner.nextLine();
 
-                manager.addAtIndex(idx, nameAt, phoneAt);
-                System.out.println("Contact added at index " + idx);
-                break;
+              System.out.print("Enter street: ");
+              String streetAt = scanner.nextLine();
 
+              System.out.print("Enter city: ");
+              String cityAt = scanner.nextLine();
+
+              System.out.print("Enter zip: ");
+              String zipAt = scanner.nextLine();
+
+              manager.addAtIndex(idx, nameAt, phoneAt, streetAt, cityAt, zipAt);
+              System.out.println("Contact added at index " + idx);
+              break;
 
             case 4:
                 System.out.print("Enter Name of Contact to Get: ");
@@ -106,16 +132,25 @@ public class Test {
             
             // Modify a contact
             case 8:
-                System.out.println("Enter Contact to Change");
+                System.out.print("Enter contact name to change: ");
                 String nameToModify = scanner.nextLine();
 
-                System.out.print("Enter New Name: ");
+                System.out.print("Enter new name (or blank to keep): ");
                 String newName = scanner.nextLine();
 
-                System.out.print("Enter New Phone: ");
+                System.out.print("Enter new phone (or blank to keep): ");
                 String newPhone = scanner.nextLine();
 
-                if (manager.modifyEntry(nameToModify, newName, newPhone)) {
+                System.out.print("Enter new street (or blank to keep): ");
+                String newStreet = scanner.nextLine();
+
+                System.out.print("Enter new city (or blank to keep): ");
+                String newCity = scanner.nextLine();
+
+                System.out.print("Enter new zip (or blank to keep): ");
+                String newZip = scanner.nextLine();
+
+                if (manager.modifyEntry(nameToModify, newName, newPhone, newStreet, newCity, newZip)) {
                     System.out.println("Updated");
                 } else {
                     System.out.println("Contact not found");
