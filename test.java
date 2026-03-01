@@ -94,7 +94,8 @@ public class Test {
               manager.addAtIndex(idx, nameAt, phoneAt, streetAt, cityAt, zipAt);
               System.out.println("Contact added at index " + idx);
               break;
-
+            
+            // Get Contact
             case 4:
                 System.out.print("Enter Name of Contact to Get: ");
                 String nameToGet = scanner.nextLine();
@@ -108,6 +109,7 @@ public class Test {
                 manager.printAll();
                 break;
             
+            // Print contact by index
             case 6:
                 manager.printIndexMenu();
 
